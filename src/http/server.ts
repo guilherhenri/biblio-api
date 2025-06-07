@@ -3,8 +3,8 @@ import express, { Express, Request, Response } from 'express'
 
 import { CustomError } from '@/core/errors/custom-error'
 
-import { env } from '../env'
-import { connectToDatabase } from '../lib/sequelize'
+import { env } from '../config/env'
+import { connectToDatabase } from '../infra/database/sequelize'
 import { errorHandler } from './middlewares/error-handler'
 
 const app: Express = express()

@@ -13,7 +13,6 @@
   "license": "ISC",
   "packageManager": "pnpm@10.10.0",
   "dependencies": {
-    "@types/sequelize": "^4.28.20",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "pg": "^8.16.0",
@@ -29,6 +28,7 @@
     "@semantic-release/git": "^10.0.1",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
+    "@types/sequelize": "^4.28.20",
     "@typescript-eslint/eslint-plugin": "^8.33.1",
     "dotenv": "^16.5.0",
     "eslint": "8.57.1",
@@ -41,6 +41,7 @@
     "lint-staged": "^16.1.0",
     "semantic-release": "^24.2.5",
     "sequelize-cli": "^6.6.3",
+    "sequelize-typescript": "^2.1.6",
     "tsup": "^8.5.0",
     "tsx": "^4.19.4"
   },
