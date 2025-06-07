@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build",
     "prepare": "husky"
   },
   "keywords": [],
@@ -19,7 +22,9 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0",
-    "semantic-release": "^24.2.5"
+    "semantic-release": "^24.2.5",
+    "tsup": "^8.5.0",
+    "tsx": "^4.19.4"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
