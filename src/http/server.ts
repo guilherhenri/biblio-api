@@ -1,10 +1,15 @@
 import cors from 'cors'
 import express, { Express, Request, Response } from 'express'
 
+import { CustomError } from '@/core/errors/custom-error'
+
 import { env } from '../env'
 import { connectToDatabase } from '../lib/sequelize'
+import { errorHandler } from './middlewares/error-handler'
 
 const app: Express = express()
+
+app.use(errorHandler)
 
 app.use(
   cors({
@@ -24,8 +29,8 @@ async function startServer() {
       console.log(`Server running at http://localhost:${env.SERVER_PORT}`)
     })
   } catch (error) {
-    console.error('Erro ao iniciar o servidor:', error)
-    process.exit(1)
+    console.log('Start Server Error: ', error)
+    throw new CustomError()
   }
 }
 
