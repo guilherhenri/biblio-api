@@ -12,6 +12,11 @@
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.10.0",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "zod": "^3.25.56"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
@@ -21,6 +26,7 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@typescript-eslint/eslint-plugin": "^8.33.1",
+    "dotenv": "^16.5.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0",
@@ -33,9 +39,5 @@
       "prettier --write",
       "eslint --fix"
     ]
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0"
   }
 }
