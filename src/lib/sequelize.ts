@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize'
 
+import { CustomError } from '@/core/errors/custom-error'
 import { env } from '@/env'
 
 const sequelize = new Sequelize({
@@ -19,6 +20,7 @@ async function connectToDatabase() {
     await sequelize.sync({ alter: true })
   } catch (error) {
     console.error('Erro ao conectar ao banco de dados:', error)
+    throw new CustomError('Erro ao conectar ao banco de dados')
   }
 }
 
