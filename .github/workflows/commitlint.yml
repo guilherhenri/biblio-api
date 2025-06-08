@@ -21,14 +21,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
-          cache: "pnpm"
+          node-version: '22'
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-
-      - name: Check commit count
-        run: echo "Total commits in branch: $(git rev-list --count HEAD)"
 
       - name: Lint commit messages
         run: pnpm commitlint --from=HEAD~${{ github.event.pull_request.commits }} --to=HEAD --
