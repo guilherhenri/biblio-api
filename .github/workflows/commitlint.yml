@@ -18,6 +18,9 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm@10.10.0
 
+      - name: Install pnpm
+        run: npm install -g pnpm@10.10.0 # Usa a mesma versão do seu projeto
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
