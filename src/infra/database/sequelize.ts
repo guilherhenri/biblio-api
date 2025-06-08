@@ -1,7 +1,11 @@
-import { Sequelize } from 'sequelize'
+import 'reflect-metadata'
 
+import path from 'node:path'
+
+import { Sequelize } from 'sequelize-typescript'
+
+import { env } from '@/config/env'
 import { CustomError } from '@/core/errors/custom-error'
-import { env } from '@/env'
 
 const sequelize = new Sequelize({
   dialect: 'postgres',
@@ -11,13 +15,16 @@ const sequelize = new Sequelize({
   username: env.DATABASE_USERNAME,
   password: env.DATABASE_PASSWORD,
   logging: env.NODE_ENV === 'development',
+  models: [path.resolve(__dirname, 'models', '*.ts')],
 })
 
 async function connectToDatabase() {
   try {
     await sequelize.authenticate()
 
-    await sequelize.sync({ alter: true })
+    if (env.NODE_ENV === 'development') {
+      await sequelize.sync({ alter: true })
+    }
   } catch (error) {
     console.error('Erro ao conectar ao banco de dados:', error)
     throw new CustomError('Erro ao conectar ao banco de dados')
