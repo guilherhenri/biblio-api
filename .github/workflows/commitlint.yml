@@ -21,8 +21,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
-          cache: "pnpm"
+          node-version: '22'
+          cache: 'pnpm'
 
       - name: Install pnpm
         run: npm install -g pnpm@10.10.0 # Usa a mesma versão do seu projeto
@@ -31,4 +31,4 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Lint commit messages
-        run: pnpm commitlint --from=HEAD~${{ github.event.pull_request.commits }} --to=HEAD
+        run: pnpm commitlint --from=HEAD~${{ github.event.pull_request.commits }} --to=HEAD --

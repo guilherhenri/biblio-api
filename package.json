@@ -10,7 +10,8 @@
     "migrate:undo": "sequelize-cli db:migrate:undo",
     "migrate:undo:all": "sequelize-cli db:migrate:undo:all",
     "migration:generate": "sequelize-cli migration:generate",
-    "prepare": "husky"
+    "prepare": "husky",
+    "teste": "commitlint --from=HEAD~15 --to=HEAD"
   },
   "keywords": [],
   "author": "",
