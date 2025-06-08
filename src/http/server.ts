@@ -2,7 +2,7 @@ import cors from 'cors'
 import express, { Express, Request, Response } from 'express'
 
 import { CustomError } from '@/core/errors/custom-error'
-import User from '@/infra/database/models/user'
+import Loan from '@/infra/database/models/loan'
 
 import { env } from '../config/env'
 import { connectToDatabase } from '../infra/database/sequelize'
@@ -18,11 +18,11 @@ app.use(
   }),
 )
 
-app.get('/users', async (req: Request, res: Response) => {
-  const users = await User.findAll()
+app.get('/loans', async (req: Request, res: Response) => {
+  const loans = await Loan.findAll()
 
   res.send({
-    users,
+    loans,
   })
 })
 
