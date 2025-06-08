@@ -6,11 +6,11 @@ import { Book } from '@/infra/database/models/book'
 
 import { env } from '../config/env'
 import { connectToDatabase } from '../infra/database/sequelize'
-// import { errorHandler } from './middlewares/error-handler'
+import { errorHandler } from './middlewares/error-handler'
 
 const app: Express = express()
 
-// app.use(errorHandler)
+app.use(errorHandler)
 
 app.use(
   cors({
