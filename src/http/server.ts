@@ -2,15 +2,15 @@ import cors from 'cors'
 import express, { Express, Request, Response } from 'express'
 
 import { CustomError } from '@/core/errors/custom-error'
-import { Book } from '@/infra/database/models/book'
+import User from '@/infra/database/models/user'
 
 import { env } from '../config/env'
 import { connectToDatabase } from '../infra/database/sequelize'
-// import { errorHandler } from './middlewares/error-handler'
+import { errorHandler } from './middlewares/error-handler'
 
 const app: Express = express()
 
-// app.use(errorHandler)
+app.use(errorHandler)
 
 app.use(
   cors({
@@ -18,11 +18,11 @@ app.use(
   }),
 )
 
-app.get('/', async (req: Request, res: Response) => {
-  const books = await Book.findAll()
+app.get('/users', async (req: Request, res: Response) => {
+  const users = await User.findAll()
 
   res.send({
-    books,
+    users,
   })
 })
 
