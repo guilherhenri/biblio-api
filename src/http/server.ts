@@ -2,14 +2,15 @@ import cors from 'cors'
 import express, { Express, Request, Response } from 'express'
 
 import { CustomError } from '@/core/errors/custom-error'
+import { Book } from '@/infra/database/models/book'
 
 import { env } from '../config/env'
 import { connectToDatabase } from '../infra/database/sequelize'
-import { errorHandler } from './middlewares/error-handler'
+// import { errorHandler } from './middlewares/error-handler'
 
 const app: Express = express()
 
-app.use(errorHandler)
+// app.use(errorHandler)
 
 app.use(
   cors({
@@ -17,8 +18,12 @@ app.use(
   }),
 )
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello, TypeScript Express Server!')
+app.get('/', async (req: Request, res: Response) => {
+  const books = await Book.findAll()
+
+  res.send({
+    books,
+  })
 })
 
 async function startServer() {

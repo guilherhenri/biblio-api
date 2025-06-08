@@ -6,6 +6,10 @@
     "dev": "tsx watch src/http/server.ts",
     "start": "node build/server.js",
     "build": "tsup src --out-dir build",
+    "migrate": "sequelize-cli db:migrate",
+    "migrate:undo": "sequelize-cli db:migrate:undo",
+    "migrate:undo:all": "sequelize-cli db:migrate:undo:all",
+    "migration:generate": "sequelize-cli migration:generate",
     "prepare": "husky"
   },
   "keywords": [],
@@ -17,6 +21,7 @@
     "express": "^5.1.0",
     "pg": "^8.16.0",
     "pg-hstore": "^2.3.4",
+    "reflect-metadata": "^0.2.2",
     "sequelize": "^6.37.7",
     "zod": "^3.25.56"
   },
@@ -31,6 +36,7 @@
     "@types/sequelize": "^4.28.20",
     "@typescript-eslint/eslint-plugin": "^8.33.1",
     "dotenv": "^16.5.0",
+    "dotenv-cli": "^8.0.0",
     "eslint": "8.57.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-n": "^17.19.0",
@@ -40,8 +46,9 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0",
     "semantic-release": "^24.2.5",
-    "sequelize-cli": "^6.6.3",
+    "sequelize-cli": "6.3.0",
     "sequelize-typescript": "^2.1.6",
+    "ts-node": "^10.9.2",
     "tsup": "^8.5.0",
     "tsx": "^4.19.4"
   },
