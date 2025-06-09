@@ -4,6 +4,7 @@ import { createBook } from './controllers/create-book'
 import { createUser } from './controllers/create-user'
 import { deleteBook } from './controllers/delete-book'
 import { getBook } from './controllers/get-book'
+import { getUser } from './controllers/get-user'
 import { listBooks } from './controllers/list-books'
 import { listUsers } from './controllers/list-users'
 import { updateBook } from './controllers/update-book'
@@ -19,4 +20,5 @@ router.put('/books/:id', updateBook)
 router.delete('/books/:id', deleteBook)
 
 router.get('/users', listUsers)
+router.get('/users/:id', getUser)
 router.post('/users', createUser)
