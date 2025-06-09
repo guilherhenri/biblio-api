@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import { z } from 'zod'
 
 import { CustomError } from '@/core/errors/custom-error'
-import Book from '@/infra/database/models/book'
+import { Book } from '@/infra/database/models/book'
 
 export async function deleteBook(req: Request, res: Response) {
   const deleteBookParamsSchema = z.object({

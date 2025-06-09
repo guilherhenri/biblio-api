@@ -28,10 +28,14 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      loanDate: {
+      borrowDate: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: DataTypes.NOW,
+      },
+      giveBackDate: {
+        type: DataTypes.DATE,
+        allowNull: true,
       },
       createdAt: {
         type: DataTypes.DATE,

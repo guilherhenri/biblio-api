@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import { z } from 'zod'
 
 import { CustomError } from '@/core/errors/custom-error'
-import Book from '@/infra/database/models/book'
+import { Book } from '@/infra/database/models/book'
 
 export async function updateBook(req: Request, res: Response) {
   const updateBookParamsSchema = z.object({

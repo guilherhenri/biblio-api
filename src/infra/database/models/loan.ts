@@ -31,7 +31,13 @@ export class Loan extends Model {
     allowNull: false,
     defaultValue: DataType.NOW,
   })
-  loanDate!: Date
+  borrowDate!: Date
+
+  @Column({
+    type: DataType.DATE,
+    allowNull: true,
+  })
+  giveBackDate!: Date
 
   @BelongsTo(() => User)
   user!: User
