@@ -16,7 +16,7 @@ export async function createBook(req: Request, res: Response) {
 
   const isISBNAlreadyRegister = await Book.findOne({
     where: {
-      title,
+      ISBN,
     },
   })
 
