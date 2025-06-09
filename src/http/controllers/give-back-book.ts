@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 import { CustomError } from '@/core/errors/custom-error'
 import { Book } from '@/infra/database/models/book'
-import Loan from '@/infra/database/models/loan'
+import { Loan } from '@/infra/database/models/loan'
 
 export async function giveBackBook(req: Request, res: Response) {
   const giveBackBookBodySchema = z.object({
