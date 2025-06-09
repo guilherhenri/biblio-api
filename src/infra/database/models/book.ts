@@ -30,6 +30,7 @@ export class Book extends Model {
   @Column({
     type: DataType.BOOLEAN,
     allowNull: false,
+    defaultValue: true,
   })
   isAvailable!: boolean
 }
