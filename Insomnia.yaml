@@ -1,0 +1,328 @@
+type: collection.insomnia.rest/5.0
+name: Biblio API Collection
+meta:
+  id: wrk_c46e3424dd424bf6a808b362dce827cf
+  created: 1728494564871
+  modified: 1749485697307
+  description: ""
+collection:
+  - name: Books
+    meta:
+      id: fld_8f11135597e54ebb85b6c979cc6532ec
+      created: 1749480584237
+      modified: 1749480584237
+      sortKey: -1749480584237
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/books"
+        name: Create Book
+        meta:
+          id: req_774ec05aadc7463f86342d39ecc9fea6
+          created: 1728494573119
+          modified: 1749480610228
+          isPrivate: false
+          description: ""
+          sortKey: -1749480594126
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "Harry Potter: E a pedra filosofal",
+            	"author": "JK",
+            	"ISBN": "1234564591254",
+            	"year": "2005"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/books"
+        name: List Books
+        meta:
+          id: req_2b7497174c534439afa4ac8a3d84659a
+          created: 1749469133244
+          modified: 1749480594359
+          isPrivate: false
+          description: ""
+          sortKey: -1749480594326
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/books/2"
+        name: Get Book
+        meta:
+          id: req_def241df1cf344a697d3c1301cdc94ce
+          created: 1749469779355
+          modified: 1749480598402
+          isPrivate: false
+          description: ""
+          sortKey: -1749480594226
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/books/1"
+        name: Update Book
+        meta:
+          id: req_20d990fa3c59405cb20161d6bc0c2b36
+          created: 1749470332106
+          modified: 1749480615679
+          isPrivate: false
+          description: ""
+          sortKey: -1749480594026
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "Harry Potter: E o prisioneiro de Askhaban",
+            	"author": "JK",
+            	"ISBN": "1234564da1254",
+            	"year": "2006"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/books/2"
+        name: Delete Book
+        meta:
+          id: req_1f7c98417c9844adb75f2d7562392db0
+          created: 1749471727338
+          modified: 1749480619312
+          isPrivate: false
+          description: ""
+          sortKey: -1749480593926
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Users
+    meta:
+      id: fld_aad624de1df847abb6b8f2a219cf2058
+      created: 1749480626559
+      modified: 1749483617344
+      sortKey: -1749252532701
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/users"
+        name: Create User
+        meta:
+          id: req_de70724254f046c68b66cf7255d5a56f
+          created: 1749480626560
+          modified: 1749481861187
+          isPrivate: false
+          description: ""
+          sortKey: -1749480594126
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Guilherme Henrique",
+            	"email": "guilherhenri12@gmail.com",
+            	"phone": "(35) 98845-5632"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/users"
+        name: List Users
+        meta:
+          id: req_dcb4c33f39194c169cad32d4fcf076ad
+          created: 1749480626561
+          modified: 1749481869539
+          isPrivate: false
+          description: ""
+          sortKey: -1749480594326
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/users/1"
+        name: Get User
+        meta:
+          id: req_e2b4477031cc4542b53b5f450c4eb4bf
+          created: 1749480626562
+          modified: 1749482375802
+          isPrivate: false
+          description: ""
+          sortKey: -1749480594226
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Loans
+    meta:
+      id: fld_e64bb85d93d34bd7b3dd614539bafe81
+      created: 1749483563561
+      modified: 1749483613632
+      sortKey: -1749024481165
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/loans"
+        name: Register Loan
+        meta:
+          id: req_bbc846ea26684a738280af282f1f25ce
+          created: 1749483620973
+          modified: 1749483691449
+          isPrivate: false
+          description: ""
+          sortKey: -1749483620973
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"userId": "1",
+            	"bookId": "1"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/loans"
+        name: Give Back Book
+        meta:
+          id: req_4460fbed38d547e38e7dfe2e0c80e20f
+          created: 1749484691143
+          modified: 1749484694945
+          isPrivate: false
+          description: ""
+          sortKey: -1749482107649.5
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"userId": "1",
+            	"bookId": "1"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/loans"
+        name: List Active Loans
+        meta:
+          id: req_53867fe99ded40df97fdac5169f7f2bd
+          created: 1749485120406
+          modified: 1749485128926
+          isPrivate: false
+          description: ""
+          sortKey: -1749483621073
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_667a98228b98bcf7084b745b4ce8bf951cf04385
+    created: 1728494564875
+    modified: 1730219272177
+environments:
+  name: Base Environment
+  meta:
+    id: env_667a98228b98bcf7084b745b4ce8bf951cf04385
+    created: 1728494564873
+    modified: 1749466166080
+    isPrivate: false
+  data:
+    base_url: http://localhost:3333/api/v1
