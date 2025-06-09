@@ -34,7 +34,7 @@ export async function registerLoan(req: Request, res: Response) {
     where: {
       userId,
       bookId,
-      giveBack: null,
+      giveBackDate: null,
     },
   })
 
