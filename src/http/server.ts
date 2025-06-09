@@ -1,18 +1,16 @@
 import cors from 'cors'
-import express, { Express, Request, Response } from 'express'
+import express, { Express, json } from 'express'
 
 import { CustomError } from '@/core/errors/custom-error'
-import Book from '@/infra/database/models/book'
-import Loan from '@/infra/database/models/loan'
-import User from '@/infra/database/models/user'
 
 import { env } from '../config/env'
 import { connectToDatabase } from '../infra/database/sequelize'
 import { errorHandler } from './middlewares/error-handler'
+import { router } from './routes'
 
 const app: Express = express()
 
-app.use(errorHandler)
+app.use(json())
 
 app.use(
   cors({
@@ -20,29 +18,9 @@ app.use(
   }),
 )
 
-app.get('/books', async (req: Request, res: Response) => {
-  const books = await Book.findAll()
+app.use('/api/v1', router)
 
-  res.send({
-    books,
-  })
-})
-
-app.get('/users', async (req: Request, res: Response) => {
-  const users = await User.findAll()
-
-  res.send({
-    users,
-  })
-})
-
-app.get('/loans', async (req: Request, res: Response) => {
-  const loans = await Loan.findAll()
-
-  res.send({
-    loans,
-  })
-})
+app.use(errorHandler)
 
 async function startServer() {
   try {
