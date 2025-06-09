@@ -5,6 +5,7 @@ import { createUser } from './controllers/create-user'
 import { deleteBook } from './controllers/delete-book'
 import { getBook } from './controllers/get-book'
 import { getUser } from './controllers/get-user'
+import { giveBackBook } from './controllers/give-back-book'
 import { listBooks } from './controllers/list-books'
 import { listUsers } from './controllers/list-users'
 import { registerLoan } from './controllers/register-loan'
@@ -25,3 +26,4 @@ router.get('/users/:id', getUser)
 router.post('/users', createUser)
 
 router.post('/loans', registerLoan)
+router.patch('/loans', giveBackBook)
