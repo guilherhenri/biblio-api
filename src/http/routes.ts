@@ -7,6 +7,7 @@ import { getBook } from './controllers/get-book'
 import { getUser } from './controllers/get-user'
 import { listBooks } from './controllers/list-books'
 import { listUsers } from './controllers/list-users'
+import { registerLoan } from './controllers/register-loan'
 import { updateBook } from './controllers/update-book'
 
 export const router = Router({
@@ -22,3 +23,5 @@ router.delete('/books/:id', deleteBook)
 router.get('/users', listUsers)
 router.get('/users/:id', getUser)
 router.post('/users', createUser)
+
+router.post('/loans', registerLoan)
