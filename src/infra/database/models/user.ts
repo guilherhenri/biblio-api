@@ -19,7 +19,7 @@ export class User extends Model {
     type: DataType.STRING,
     allowNull: false,
   })
-  telefone!: string
+  phone!: string
 }
 
 export default User

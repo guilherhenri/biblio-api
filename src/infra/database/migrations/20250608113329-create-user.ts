@@ -17,7 +17,7 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
-      telefone: {
+      phone: {
         type: DataTypes.STRING,
         allowNull: false,
       },
